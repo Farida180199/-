@@ -3,15 +3,20 @@ package lab2;
 import java.util.Scanner;
 
 public class main {
+   public static int sum(int n) {
 
-    public static void main (String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int s = 0;
-        while(n != 0){
-            s += (n % 10);
-            n/=10;
+        if (n%10 == n) {
+            return n;
         }
-        System.out.println(s + (n/10));
+        else {
+            return n % 10 + sum(n / 10);
+        }
     }
+    public static void main (String[] args) {
+        int n;
+        Scanner scanner = new Scanner(System.in);
+        n = scanner.nextInt();
+        System.out.println(sum(n));
+    }
+
 }
